@@ -18,6 +18,8 @@ CopyPaste provides rcopy, rcut, rpaste unix tools that interact with a central q
     rpaste somebuf && printf '\a' # waits for data in somebuf, then makes the terminal beep
     echo "woot" | rcut somebuf # prints woot in the other terminal and then the other terminal beeps
 
+    cat some_binary | gzip - | rcopy mybuf # poor man's insecure file copy
+    rpaste mybuf | gunzip - > some_binary
 
 == Authors    
 * Lucas Carlson (mailto:lucas@rufy.com)
