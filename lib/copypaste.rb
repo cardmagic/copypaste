@@ -6,7 +6,7 @@ require 'fileutils'
 
 class CopyPasteError < StandardError; end
 class CopyPaste
-  VERSION = "0.9"
+  VERSION = "0.9.1"
   CONFIGURATION = "#{ENV['HOME']}/.copypaste"
   
   class << self
@@ -23,10 +23,14 @@ class CopyPaste
       server.get("copypaste-#{queue}")
     end
     
-    def setup
-      print "What is your starling server address (127.0.0.1:22122): "
-      $stdout.flush
-      server = gets.strip
+    def setup(value)
+      if value.to_s.empty?
+        print "What is your starling server address (127.0.0.1:22122): "
+        $stdout.flush
+        server = gets.strip
+      else
+        server = value
+      end
       
       if server.empty?
         server = "127.0.0.1:22122"

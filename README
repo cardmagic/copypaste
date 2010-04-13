@@ -20,7 +20,7 @@ CopyPaste provides rcopy, rcut, rpaste unix tools that interact with a central q
 
 
 == Authors    
-* Lucas Carlson from MOG (mailto:lucas@rufy.com)
+* Lucas Carlson (mailto:lucas@rufy.com)
 
 This library is released under the terms of the BSD.
 

@@ -6,7 +6,7 @@ require 'copypaste'
 
 case (queue = ARGV.shift)
 when "--setup"
-  CopyPaste.setup
+  CopyPaste.setup(ARGV.shift)
 else
   puts CopyPaste.copy(queue, STDIN)
 end
