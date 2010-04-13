@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__)+'/../lib') unless
+  $:.include?(File.dirname(__FILE__)+'/../lib') || $:.include?(File.expand_path(File.dirname(__FILE__)+'/../lib'))
+
+require 'copypaste'
+
+case (queue = ARGV.shift)
+when "--setup"
+  CopyPaste.setup
+else
+  puts CopyPaste.copy(queue, STDIN)
+end

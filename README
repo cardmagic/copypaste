@@ -1,0 +1,26 @@
+== Welcome to CopyPaste
+
+CopyPaste provides rcopy, rcut, rpaste unix tools that interact with a central queue server through the memcached protocol
+
+== Download
+
+* gem install copypaste
+* http://github.com/cardmagic/copypaste
+
+== Usage
+
+    echo "hello world" | rcut # does not print anything, copies data into default buffer
+    rpaste # prints hello world
+
+    echo "hello world" | rcopy mybuf # prints hello world, copies into mybuf buffer
+    rpaste mybuf # prints hello world
+
+    rpaste somebuf && printf '\a' # waits for data in somebuf, then makes the terminal beep
+    echo "woot" | rcut somebuf # prints woot in the other terminal and then the other terminal beeps
+
+
+== Authors    
+* Lucas Carlson from MOG (mailto:lucas@rufy.com)
+
+This library is released under the terms of the BSD.
+
